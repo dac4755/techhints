@@ -109,3 +109,33 @@ Extraction
 Extract length characters from variable starting at position	${variable:position:length}
 String length of variable	${#variable}
 
+##############################
+
+display a set of lines from a file:
+Assuming you need lines 20 to 40,
+
+sed -n '20,40p;41q' file_name
+
+or, for multiple sections, something like:
+sed -n '5,8p;20,25p;26q' README.md
+
+##############################
+
+iptables
+
+iptables -F -t raw
+iptables -F -t mangle
+iptables -F -t nat
+iptables -F -t filter
+iptables -F -t security
+
+iptables -X -t table  # to delete all the user defined chains for the table; need to flush rules first
+
+iptables -P INPUT ACCEPT|DROP    # set default
+iptables -P FORWARD ACCEPT|DROP
+iptables -P OUTPUT ACCEPT|DROP
+
+clear and dump everything:
+for t in raw mangle nat filter security; do iptables -F -t $t; iptables -X -t $t  ; echo -e "\n************* $t ************\n";iptables -L -t $t; done
+
+
