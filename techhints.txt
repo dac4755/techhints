@@ -25,6 +25,12 @@ git log
 
 git rm [file names]
 
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
+
+https://github.com/git/git/tree/master/contrib/completion
+
+
 ***********************
 
 ssh pi@raspberrypi.home 'arecord -f cd -D plughw:1 | ffmpeg -ac 1 -i - -f ogg -' | mplayer - -idle -demuxer ogg # Baby monitor over ssh, making it more private/secure than those in stores. Replace plughw:1 with mic device from arecord -l output. Make it a script for easy access.
