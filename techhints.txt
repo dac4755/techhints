@@ -20,13 +20,19 @@ git init
 # to set the editor
 git config --global core.editor "vim"
 
-git commit
+git commit -m "blah blah blah"
 
 git status
 
 git log
 
 git rm [file names]
+
+# to fix out of sync:
+git stash
+git pull
+git stash pop
+# resolve conflicts in file(s)
 
 source ~/.git-completion.bash
 source ~/.git-prompt.sh
