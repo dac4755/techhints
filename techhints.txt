@@ -65,6 +65,20 @@ shadow
 ***********************
 
 ssh pi@raspberrypi.home 'arecord -f cd -D plughw:1 | ffmpeg -ac 1 -i - -f ogg -' | mplayer - -idle -demuxer ogg # Baby monitor over ssh, making it more private/secure than those in stores. Replace plughw:1 with mic device from arecord -l output. Make it a script for easy access.
+
+***********************
+set up openvpn 
+
+fwiw, on ubuntu:
+
+sudo apt-get install network-manager-openvpn-gnome
+
+sudo service NetworkManager restart
+
+(see email sent to russ 10/3/2018 for files)
+tar zxf md-router-udp-1194.tar.gz
+
+from the network settings menu, add a vpn, import the config file from the above tarball (or which ever as appropriate), and add the specific user credentials
  
 
 ************************
