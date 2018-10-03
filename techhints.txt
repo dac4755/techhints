@@ -161,6 +161,7 @@ for t in raw mangle nat filter security; do iptables -F -t $t; iptables -X -t $t
        KERN_INFO              6        Informational
        KERN_DEBUG             7        Debug-level messages
 
+<<<<<<< Updated upstream
 ##############################
 
 containers
@@ -238,5 +239,4 @@ dac oss $ lxc list
 | many-gnat2      | RUNNING |                       | fd42:7d66:2c76:74a3:216:3eff:fe94:1246 (eth0) | PERSISTENT | 0         |
 +-----------------+---------+-----------------------+-----------------------------------------------+------------+-----------+
 
-this is a test
 
