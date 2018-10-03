@@ -1,3 +1,6 @@
+******************
+laptop suspend with linux
+
 system shuts down during lid close suspend:
 Edit the file /etc/default/grub 
 Change the line with:
