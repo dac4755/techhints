@@ -20,6 +20,19 @@ dpkg -l  # to list all installed packages
 
 apt-cache search foo # search available packages for "foo"
 
+*******************************
+
+use alternatives to set java version
+
+update-alternatives --config java   # lets you set the version of java
+
+# add new version of java+apps by hand ("11" param is priority):
+for i in `ls /usr/lib/jvm/jdk-11/bin/`; do update-alternatives --install /usr/bin/$i /usr/lib/jvm/jdk-11/bin/$i 11; done
+
+# then run same loop with --config $i to set the defaults to new versions
+
+# show defines for java command:
+update-alternatives --display java
 
 ***********
 
