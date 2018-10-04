@@ -11,6 +11,16 @@ run update-grub
 # from command line
 systemctl suspend
 
+*************
+dpkg and apt commands
+
+By default, apt stores the .deb files in /var/cache/apt/archives. If you can't find them here, you or someone else or something else(a software like Ubuntu tweak) may have run a clean-up command like sudo apt-get clean to clear up the .deb files
+
+dpkg -l  # to list all installed packages
+
+apt-cache search foo # search available packages for "foo"
+
+
 ***********
 
 git
