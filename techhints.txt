@@ -305,3 +305,17 @@ dac oss $ lxc list
 +-----------------+---------+-----------------------+-----------------------------------------------+------------+-----------+
 
 
+**************************
+android toolchain
+
+dac 45558 $ ~/Android/Sdk/ndk-bundle/build/tools/make_standalone_toolchain.py --arch aarch64 --api 21 --install-dir /home/dac/bin/android-toolchain.21
+usage: make_standalone_toolchain.py [-h] --arch
+                                    {arm,arm64,mips,mips64,x86,x86_64}
+                                    [--api API]
+                                    [--stl {gnustl,libc++,stlport}] [--force]
+                                    [-v]
+                                    [--package-dir PACKAGE_DIR | --install-dir INSTALL_DIR]
+make_standalone_toolchain.py: error: argument --arch: invalid choice: 'aarch64' (choose from 'arm', 'arm64', 'mips', 'mips64', 'x86', 'x86_64')
+dac 45558 $ ~/Android/Sdk/ndk-bundle/build/tools/make_standalone_toolchain.py --arch x86 --api 21 --install-dir /home/dac/bin/android-toolchain.21.x86
+dac 45558 $ ~/Android/Sdk/ndk-bundle/build/tools/make_standalone_toolchain.py --arch arm64 --api 21 --install-dir /home/dac/bin/android-toolchain.21.aarch64
+
