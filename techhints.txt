@@ -12,6 +12,14 @@ run update-grub
 systemctl suspend
 
 *************
+
+grep regx/regular expression to find ipv4 addresses:
+
+grep "[12]\{0,1\}[0-9]\{0,1\}[0-9]\.[1-2]\{0,1\}[0-9]\{0,1\}[0-9]\.[1-2]\{0,1\}[0-9]\{0,1\}[0-9]\.[1-2]\{0,1\}[0-9]\{0,1\}[0-9]" secure* 
+
+*************
+
+
 dpkg and apt commands
 
 By default, apt stores the .deb files in /var/cache/apt/archives. If you can't find them here, you or someone else or something else(a software like Ubuntu tweak) may have run a clean-up command like sudo apt-get clean to clear up the .deb files
@@ -86,6 +94,30 @@ shadow
 1 2 3 4 5 6 7 8 9 10 
 
 ***********************
+
+# convert to a pem format
+openssl pkcs7 -inform DER -print_certs -out cert.pem -in CERT.RSA
+
+# print cert info:
+keytool -printcert -file CERT.RSA
+
+# once you have the cert.pem file you can get the public key by using the following command:
+openssl x509 -in cert.pem -noout -text
+
+# If you only want to get the part of public-key out of the CERT.RSA file, you can try out the following method:
+
+# convert CERT.RSA to a standard pem file:
+openssl pkcs7 -in CERT.RSA -inform DER -print_certs -out cert.pem
+
+# get public key from the pem file:
+openssl x509 -in cert.pem -pubkey -noout
+
+# to compare public keys to see if they share a prime, use SageMath. see
+# keyresolver.py in this repo. Any keys that output two numbers where one is not
+# '1' then you have a common factor.
+
+***********************
+
 
 ssh pi@raspberrypi.home 'arecord -f cd -D plughw:1 | ffmpeg -ac 1 -i - -f ogg -' | mplayer - -idle -demuxer ogg # Baby monitor over ssh, making it more private/secure than those in stores. Replace plughw:1 with mic device from arecord -l output. Make it a script for easy access.
 
