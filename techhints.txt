@@ -1,4 +1,11 @@
 ******************
+python
+
+see search paths
+
+python -m site
+
+******************
 laptop suspend with linux
 
 system shuts down during lid close suspend:
