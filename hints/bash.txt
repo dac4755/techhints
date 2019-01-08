@@ -1,0 +1,95 @@
+*****************************
+
+loop on lines (protects when there are spaces in filenames for example):
+
+( IFS=$'\n'; for i in `ls *.pdf`; do bzip2 -9 $i ; done )
+
+bzips all pdfs in a directory. The parens limit the change to IFS
+to only this execution.
+
+*********************************
+
+display a set of lines from a file:
+Assuming you need lines 20 to 40,
+
+sed -n '20,40p;41q' file_name
+
+or, for multiple sections, something like:
+sed -n '5,8p;20,25p;26q' README.md
+
+**************************************
+
+grep regx/regular expression to find ipv4 addresses:
+
+grep "[12]\{0,1\}[0-9]\{0,1\}[0-9]\.[1-2]\{0,1\}[0-9]\{0,1\}[0-9]\.[1-2]\{0,1\}[0-9]\{0,1\}[0-9]\.[1-2]\{0,1\}[0-9]\{0,1\}[0-9]" secure* 
+
+
+*************
+
+bash filename manipulation examples
+
+~% FILE="example.tar.gz"
+~% echo "${FILE%%.*}"
+example
+~% echo "${FILE%.*}"
+example.tar
+~% echo "${FILE#*.}"
+tar.gz
+~% echo "${FILE##*.}"
+gz
+
+also, for chopping filename and path:
+
+# dirname /etc/shadow
+/etc
+# basename /etc/shadow
+shadow
+
+# for i in {1..10}; do echo -n "$i " ; done
+1 2 3 4 5 6 7 8 9 10 
+
+**********************************
+
+create 'seq n' directories with consecutive days:
+seq 5 | xargs -n1 -I{} date -d "+{} days" +%Y%m%d | xargs mkdir
+
+(xargs) -n1 does 1 argument from the feeding command
+        -I{} use argument as input to command (date)
+(date) +{} days  -  add $arg days to date
+
+**********************************
+
+
+Assignment
+Assign value to variable if variable is not already set. Value will be returned.
+
+Couple with : no-op if return value is to be discarded.	${variable="value"}
+: ${variable="value"}
+
+Removal
+
+Delete shortest match of needle from front of haystack	${haystack#needle}
+Delete longest match of needle from front of haystack	${haystack##needle}
+Delete shortest match of needle from back of haystack	${haystack%needle}
+Delete longest match of needle from back of haystack	${haystack%%needle}
+
+Replacement
+
+Replace first match of needle with replacement from haystack	${haystack/needle/replacement}
+Replace all matches of needle with replacement from haystack	${haystack//needle/replacement}
+If needle matches front of haystack replace with replacement	${haystack/#needle/replacement}
+If needle matches back of haystack replace with replacement	${haystack/%needle/replacement}
+
+Substitution
+
+If variable not set, return value, else variable	${variable-value}
+If variable not set or empty, return value, else variable	${variable:-value}
+If variable set, return value, else null string	${variable+value}
+If variable set and not empty, return value, else null string	${variable:+value}
+
+Extraction
+
+Extract length characters from variable starting at position	${variable:position:length}
+String length of variable	${#variable}
+
+

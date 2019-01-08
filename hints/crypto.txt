@@ -1,0 +1,24 @@
+***********************
+
+# convert to a pem format
+openssl pkcs7 -inform DER -print_certs -out cert.pem -in CERT.RSA
+
+# print cert info:
+keytool -printcert -file CERT.RSA
+
+# once you have the cert.pem file you can get the public key by using the following command:
+openssl x509 -in cert.pem -noout -text
+
+# If you only want to get the part of public-key out of the CERT.RSA file, you can try out the following method:
+
+# convert CERT.RSA to a standard pem file:
+openssl pkcs7 -in CERT.RSA -inform DER -print_certs -out cert.pem
+
+# get public key from the pem file:
+openssl x509 -in cert.pem -pubkey -noout
+
+# to compare public keys to see if they share a prime, use SageMath. see
+# keyresolver.py in this repo. Any keys that output two numbers where one is not
+# '1' then you have a common factor.
+
+

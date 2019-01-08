@@ -1,0 +1,14 @@
+******************
+radare r2
+
+# this is @trufae (pancake) saying to use "custom" analysis. the aab does not work in my
+# version but the axg still produces a list - maybe not valid? or expected?
+I use to do custom analysis commands instead of the default automated ones. you can try with. 
+e anal.hasnext=true;af;aab
+axg
+axg @main
+aggv
+aggv @main
+
+
+
