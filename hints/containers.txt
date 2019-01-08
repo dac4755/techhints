@@ -1,0 +1,85 @@
+
+##############################
+
+containers
+
+lxc init  # run the first time as regular user to set up stuff; not sure where it all goes
+
+default (and non) settings I chose:
+
+dac oss $ lxd init
+Would you like to use LXD clustering? (yes/no) [default=no]: 
+Do you want to configure a new storage pool? (yes/no) [default=yes]: 
+Name of the new storage pool [default=default]: 
+Name of the storage backend to use (btrfs, dir, lvm) [default=btrfs]: 
+Create a new BTRFS pool? (yes/no) [default=yes]: 
+Would you like to use an existing block device? (yes/no) [default=no]: 
+Size in GB of the new loop device (1GB minimum) [default=90GB]: 5GB
+Invalid input, try again.
+
+Size in GB of the new loop device (1GB minimum) [default=90GB]: 5
+Would you like to connect to a MAAS server? (yes/no) [default=no]: 
+Would you like to create a new local network bridge? (yes/no) [default=yes]: 
+What should the new bridge be called? [default=lxdbr0]: 
+What IPv4 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+What IPv6 address should be used? (CIDR subnet notation, “auto” or “none”) [default=auto]: 
+Would you like LXD to be available over the network? (yes/no) [default=no]: yes
+Address to bind LXD to (not including port) [default=all]: 
+Port to bind LXD to [default=8443]: 
+Trust password for new clients: 
+Again: 
+Would you like stale cached images to be updated automatically? (yes/no) [default=yes] 
+Would you like a YAML "lxd init" preseed to be printed? (yes/no) [default=no]: 
+
+lxc list  # shows containers
+
+lxc launch ubuntu:16.04   # start a container??? suggested from lxc list
+
+dac oss $ lxc launch ubuntu:16.04
+Creating the container
+Container name is: amazed-lionfish            
+Starting amazed-lionfish
+dac oss $ lxc list
++-----------------+---------+-----------------------+-----------------------------------------------+------------+-----------+
+|      NAME       |  STATE  |         IPV4          |                     IPV6                      |    TYPE    | SNAPSHOTS |
++-----------------+---------+-----------------------+-----------------------------------------------+------------+-----------+
+| amazed-lionfish | RUNNING | 10.208.241.240 (eth0) | fd42:7d66:2c76:74a3:216:3eff:fea7:f1e8 (eth0) | PERSISTENT | 0         |
++-----------------+---------+-----------------------+-----------------------------------------------+------------+-----------+
+dac oss $ 
+dac oss $ lxc launch ubuntu:16.10 uber1610 -c security.idmap.isolated=true
+Creating uber1610
+Error: Failed container creation: Not enough uid/gid available for the container.
+# should work; not sure why failed
+https://www.youtube.com/watch?v=SvZK8LxEXSs&feature=youtu.be&t=1577
+
+dac oss $ lxc stop many-gnat
+dac oss $ lxc list
++-----------------+---------+-----------------------+-----------------------------------------------+------------+-----------+
+|      NAME       |  STATE  |         IPV4          |                     IPV6                      |    TYPE    | SNAPSHOTS |
++-----------------+---------+-----------------------+-----------------------------------------------+------------+-----------+
+| amazed-lionfish | RUNNING | 10.208.241.240 (eth0) | fd42:7d66:2c76:74a3:216:3eff:fea7:f1e8 (eth0) | PERSISTENT | 0         |
++-----------------+---------+-----------------------+-----------------------------------------------+------------+-----------+
+| many-gnat       | STOPPED |                       |                                               | PERSISTENT | 0         |
++-----------------+---------+-----------------------+-----------------------------------------------+------------+-----------+
+dac oss $ 
+dac oss $ lxc launch ubuntu:16.10 many-gnat2 -c security.privileged=true
+Creating many-gnat2
+Starting many-gnat2
+dac oss $ lxc list
++-----------------+---------+-----------------------+-----------------------------------------------+------------+-----------+
+|      NAME       |  STATE  |         IPV4          |                     IPV6                      |    TYPE    | SNAPSHOTS |
++-----------------+---------+-----------------------+-----------------------------------------------+------------+-----------+
+| amazed-lionfish | RUNNING | 10.208.241.240 (eth0) | fd42:7d66:2c76:74a3:216:3eff:fea7:f1e8 (eth0) | PERSISTENT | 0         |
++-----------------+---------+-----------------------+-----------------------------------------------+------------+-----------+
+| many-gnat       | STOPPED |                       |                                               | PERSISTENT | 0         |
++-----------------+---------+-----------------------+-----------------------------------------------+------------+-----------+
+| many-gnat2      | RUNNING |                       | fd42:7d66:2c76:74a3:216:3eff:fe94:1246 (eth0) | PERSISTENT | 0         |
++-----------------+---------+-----------------------+-----------------------------------------------+------------+-----------+
+
+  *** podman ***
+
+podman info
+- if it complains about no /etc/containers/registries.conf then...
+echo -e "[registries.search]\nregistries = ['docker.io', 'registry.fedoraproject.org', 'quay.io', 'registry.centos.org']" > /etc/containers/registries.conf
+
+
