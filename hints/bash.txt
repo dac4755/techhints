@@ -1,4 +1,11 @@
 *****************************
+find which programs use a library
+(assumes ability to read most stuff in /proc)
+
+for i in `grep libvorbis [0-9]*/maps | sed 'sv/.*vv'|sort|uniq`; do cat $i/cmdline; echo; done
+
+
+*****************************
 convert hex digits to ascii
 
 echo "2f73797374656d2f" | xxd -p -r
