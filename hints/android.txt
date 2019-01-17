@@ -8,3 +8,31 @@ for Pixel, to get to recovery menu:
 7) Hold power
 8) tap Vol Up and release both; Recovery menu should appear instantly (before release)
 
+****************************
+gdb
+
+put executable on device; /data/local/tmp/
+make sure it is executable (chmod +x)
+put gdbserver on device 
+make sure it is executable
+
+gdbserver can be found in the ndk, e.g.:
+.../ndk-bundle/prebuilt/android/arm-64/gdbserver
+
+on device run
+./gdbserver :5309 /data/local/tmp/program
+
+on workstation:
+adb forward tcp:5309 tcp:5309
+
+run gdb version for android target:
+...ndk-bundle/prebuilt/linux-x86_64/bin/gdb
+
+that start gdb, within gdb:
+(gdb) target remote :5309
+[bunch of connection messages]
+(gdb) br *main
+(gdb) continue
+
+***************************************
+
