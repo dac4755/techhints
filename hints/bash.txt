@@ -1,4 +1,39 @@
 *****************************
+convert hex digits to ascii
+
+echo "2f73797374656d2f" | xxd -p -r
+/system/
+
+or if we have a string like this:
+"2f 73 79 73 74 65 6d 2f"
+
+echo "2f 73 79 73 74 65 6d 2f" | xxd -p -r
+/system/
+
+or 
+
+for c in `echo "2f 73 79 73 74 65 6d 2f"` ; do printf "\x$c"; done
+/system/
+
+*****************************
+little endian
+
+appears in memory/code byte swapped per 16 bits:
+
+memory:
+aabb ccdd eeff gghh
+
+is really:
+bbaa ddcc ffee hhgg
+
+for example, we might see 64 bits like this in memory:
+
+732f 7379 6574 2f6d
+
+this is ascii: /system/
+once the bytes are swapped (if little endian)
+
+*****************************
 
 loop on lines (protects when there are spaces in filenames for example):
 
