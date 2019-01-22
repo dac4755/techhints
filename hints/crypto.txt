@@ -21,4 +21,18 @@ openssl x509 -in cert.pem -pubkey -noout
 # keyresolver.py in this repo. Any keys that output two numbers where one is not
 # '1' then you have a common factor.
 
+# inspect a certificate
+
+openssl x509 -in file.crt -noout -text | keytool -printcert
+
+# look at certificates for a web site:
+openssl s_client -showcerts -connect google.com:443
+
+# generate a key file and a csr
+openssl genkey > file.key
+openssl req -new -sha256 -key file.key -out file.csr
+
+
+
+
 
