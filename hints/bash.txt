@@ -1,4 +1,11 @@
 *****************************
+print out the invocation of all running processes
+(mainly captured also as example of for, if, file exists, string is null)
+
+for p in `ls -1d /proc/[1-9]*`; do if [ -f "$p/cmdline" ]; then s="`cat $p/cmdline`"; if [ ! -z "$s" ]; then echo "$p $s"; fi; fi; done 2> /dev/null
+
+*****************************
+
 find which programs use a library
 (assumes ability to read most stuff in /proc)
 
