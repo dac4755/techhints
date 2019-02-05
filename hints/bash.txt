@@ -1,4 +1,10 @@
 *****************************
+
+convert an xlsx to csv use ssconvert (part of numeric)
+
+ssconvert foo.xlsx foo.csv
+
+*****************************
 print out the invocation of all running processes
 (mainly captured also as example of for, if, file exists, string is null)
 
@@ -65,6 +71,12 @@ sed -n '20,40p;41q' file_name
 
 or, for multiple sections, something like:
 sed -n '5,8p;20,25p;26q' README.md
+
+use tail to skip first N lines or show last N lines:
+
+tail -n +11 file.txt  # start print at line 11 - skip first 10
+
+tail -n 10 file.txt   # print out last 10 lines
 
 **************************************
 
