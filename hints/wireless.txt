@@ -34,4 +34,12 @@ grep handshake foo1 | grep -v "0 handshake"
 
 to find if there are any to crack
 
+************************
+bluetooth
+
+ScottyBauer commented on Sep 23, 2018
+You need to kill off all currently running instances of bluetooth. Then start the PoC. You'll need to enable bluetooth advertising via hciconfig as well:
+
+hciconfig hci0 up
+hciconfig hci0 leadv
 
