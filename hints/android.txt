@@ -36,3 +36,19 @@ that start gdb, within gdb:
 
 ***************************************
 
+native compile:
+
+create a toolchain from the script in the ndk:
+
+~/android/ndk-bundle/build/tools/make_standalone_toolchain.py --arch arm --api 26 --install-dir ./android-toolchain
+
+./android-toolchain/bin/clang net.c
+
+adb push a.out /data/local/tmp/
+
+
+
+
+***************************************
+
+
