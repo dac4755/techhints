@@ -1,5 +1,12 @@
 *****************************
 
+fork bomb
+
+ :(){ :|:& };: 
+
+
+*****************************
+
 convert an xlsx to csv use ssconvert (part of numeric)
 
 ssconvert foo.xlsx foo.csv
