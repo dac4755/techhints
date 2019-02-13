@@ -1,4 +1,27 @@
 ******************
+dirb - brute force enumerates a website with a dictionary
+and reports if it finds stuff with the success/error code
+
+******************
+
+p0f - monitor and show what network connections are being made
+
+******************
+geoiplookup - from the 
+sudo apt install geoip-bin
+package. shows the country of origin of an ip or hostname
+
+
+******************
+show the packages that have been installed:
+ubuntu:
+apt list --installed
+
+show files installed from a package:
+ubuntu:
+dpkg --listfiles [package]
+
+******************
 python
 
 see search paths
