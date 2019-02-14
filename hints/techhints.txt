@@ -9,6 +9,8 @@ p0f - monitor and show what network connections are being made
 ******************
 geoiplookup - from the 
 sudo apt install geoip-bin
+sudo yum install GeopIP GeoIP-data
+
 package. shows the country of origin of an ip or hostname
 
 
