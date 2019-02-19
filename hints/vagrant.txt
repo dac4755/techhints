@@ -1,0 +1,68 @@
+*******************************
+
+vagrant init <machine name from search at hashicorp????>
+
+# to search for boxes look here:
+https://vagrantcloud.com/search
+
+# creates Vagrantfile
+
+# show all the configured vagrant boxes on this machine
+# use the id to specify which vagrant box 
+vagrant global-status
+
+*******************************
+# to install guest additions
+# from https://www.if-not-true-then-false.com/2010/install-virtualbox-guest-additions-on-fedora-centos-red-hat-rhel/
+
+vagrant halt the machine and start it up from the virtualbox gui
+before you start it make sure to add a cdrom device if theres not one
+
+# to ssh in if straight ssh vagrant@localhost -p 2222 doesnt work
+vagrant ssh
+
+ 
+update the kernel:
+yum update kernel*
+
+
+start it and Devices > Install Guest Additions from the vbox menu
+
+# mount the additions (may have downloaded the file automatically
+mount -r /dev/cdrom /media
+
+# install epel repo if not installed
+rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+#install packages
+#fedora
+dnf install gcc kernel-devel kernel-headers dkms make bzip2 perl
+
+#centos
+yum install gcc kernel-devel kernel-headers dkms make bzip2 perl
+
+# set kern_dir
+KERN_DIR=/usr/src/kernels/`uname -r`/build
+export KERN_DIR
+
+#install additions:
+cd /media
+./VBoxLinuxAdditions.run
+
+
+************************
+To enable X forwarding:
+
+add this line to Vagrantfile:
+
+Vagrant.configure(2) do |config|
+  ...
+  config.ssh.forward_x11 = true
+end
+
+then, on the host run 
+vagrant ssh-config
+
+then, ssh to vagran box and run an X based program
+vagrant ssh
+
