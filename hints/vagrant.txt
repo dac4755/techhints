@@ -66,3 +66,9 @@ vagrant ssh-config
 then, ssh to vagran box and run an X based program
 vagrant ssh
 
+************************
+ssh problems:
+
+to enable password ssh login:
+amending the /etc/ssh/sshd_config 'PasswordAuthentication yes' then re-started the service 'sudo systemctl restart sshd'
+
