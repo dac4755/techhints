@@ -1,0 +1,18 @@
+***********************
+
+dynmaically toggle a domain to permissive and then restore:
+
+semanage permissive -a httpd_t
+
+semodule -l | grep permissive  # to list all permissive domains
+
+semanage permissive -d httpd_t
+
+***********************
+
+rpm -q --whatprovides /usr/share/selinux/devel/Makefile 
+selinux-policy-devel-3.13.1-229.el7_6.9.noarch
+
+make -f /usr/share/selinux/devel/Makefile  # makes policy modules in current directory
+sudo semodule -i daf.pp # activate/insert the new module
+
