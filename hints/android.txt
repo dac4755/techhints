@@ -42,7 +42,11 @@ create a toolchain from the script in the ndk:
 
 ~/android/ndk-bundle/build/tools/make_standalone_toolchain.py --arch arm --api 26 --install-dir ./android-toolchain
 
+
 ./android-toolchain/bin/clang net.c
+
+might have to explicitly make it PIE if >5.0 like:
+~/bin/android-toolchain.21.aarch64/bin/clang -o server -fPIE tests.c -fPIE -pie
 
 adb push a.out /data/local/tmp/
 
