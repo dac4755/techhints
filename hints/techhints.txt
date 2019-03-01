@@ -1,4 +1,16 @@
 ******************
+wget
+
+wget -r -U test --wait=7 --random-wait -e robots=off -i recipes.links 
+
+-r recurse
+-U string user agent
+--wait=n   wait seconds
+--random-wait   randomize based on wait=n
+-e robots=off   ignore robots.txt
+-i file        file of links
+
+******************
 dirb - brute force enumerates a website with a dictionary
 and reports if it finds stuff with the success/error code
 
