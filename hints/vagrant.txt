@@ -11,6 +11,9 @@ https://vagrantcloud.com/search
 # use the id to specify which vagrant box 
 vagrant global-status
 
+# remove machines from glbal list that were deleted
+vagrant global-status --prune
+
 *******************************
 # to install guest additions
 # from https://www.if-not-true-then-false.com/2010/install-virtualbox-guest-additions-on-fedora-centos-red-hat-rhel/
