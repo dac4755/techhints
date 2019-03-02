@@ -1,4 +1,21 @@
 ******************
+find out what package provided a file
+
+rpm -q --whatprovides /usr/share/selinux/devel/Makefile 
+
+dpkg -S filename
+
+# info on a package
+dpkg -s nmap
+
+# show installed packages
+apt list --installed
+dpkg --get-selections
+dpkg -l
+rpm -qa
+yum list installed
+
+******************
 wget
 
 wget -r -U test --wait=7 --random-wait -e robots=off -i recipes.links 

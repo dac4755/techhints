@@ -1,5 +1,17 @@
 *****************************
 
+numbers
+
+num=$((num1 + num2))
+num=$(($num1 + $num2))       # also works
+num=$((num1 + 2 + 3))        # ...
+num=$[num1+num2]             # old, deprecated arithmetic expression syntax
+Using the external expr utility. Note that this is only needed for really old systems.
+
+num=`expr $num1 + $num2`     # whitespace for expr is important
+
+*****************************
+
 fork bomb
 
  :(){ :|:& };: 
