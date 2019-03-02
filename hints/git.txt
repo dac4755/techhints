@@ -1,5 +1,9 @@
 ***********
 
+(Melanie Patrick)
+https://speakerdeck.com/mgapatrick/git-how-to-unfuck
+https://www.youtube.com/watch?v=LP4F2rmi4r4
+
 git
 
 git init
