@@ -69,6 +69,16 @@ vagrant ssh-config
 then, ssh to vagran box and run an X based program
 vagrant ssh
 
+on host in /etc/ssh/sshd_config
+X11Forwarding yes
+X11UseLocalhost no
+
+restart sshd
+
+make sure xauth is installed
+yum install xauth
+
+
 ************************
 ssh problems:
 
