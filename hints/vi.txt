@@ -1,0 +1,24 @@
+******************
+
+use vim, vi should get alternatives linked to vim
+
+to get a new syntax coloring set, but the files in ~/.vim
+
+$ d
+total 28
+drwxr-xr-x 2 dac dac 4096 Mar  8 13:11 ftdetect
+drwxr-xr-x 2 dac dac 4096 Mar  8 13:11 ftplugin
+-rw-r--r-- 1 dac dac 1281 Mar  8 13:11 README.md
+drwxr-xr-x 2 dac dac 4096 Mar  8 13:11 syntax
+
+
+$ cat .vimrc 
+:set tags=./tags;~/src
+:set hlsearch
+
+
+** split screen commands
+
+????
+
+
