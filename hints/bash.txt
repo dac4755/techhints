@@ -1,4 +1,14 @@
 *****************************
+turn history on or off
+
+set +o history
+
+set -o history
+
+also, if you put a space in front of the command it will not be recorded
+in history!!!!!
+
+*****************************
 
 base64 
  find this a lot in web based stuff 
