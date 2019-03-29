@@ -9,6 +9,16 @@ for Pixel, to get to recovery menu:
 8) tap Vol Up and release both; Recovery menu should appear instantly (before release)
 
 ****************************
+
+verify an apk signature on command line:
+
+apksigner verify my-app.apk; echo $?   # need to check $? == 0 for success
+
+apksigner verify -v foo.apk # actually return verbage on the check
+
+apksigner verify -v --print-certs foo.apk  # to also get the digests for the signer certs
+
+****************************
 gdb
 
 put executable on device; /data/local/tmp/
