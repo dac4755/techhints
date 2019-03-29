@@ -1,5 +1,22 @@
 *****************************
 
+base64 
+ find this a lot in web based stuff 
+
+important base64 url_safe safety tip - fix it before decoding
+cat foo.64 | tr -- "-_" "+/" | base64 -d > foo.txt
+or it won't 
+
+****
+similarly, c++ and java mangled symbol names can be decoded:
+
+$ echo "_ZN4DionC1Ev" | c++filt
+Dion::Dion()
+$ echo _Z1fv, | c++filt -n
+f(),
+
+*****************************
+
 numbers
 
 num=$((num1 + num2))
