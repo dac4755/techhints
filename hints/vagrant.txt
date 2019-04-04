@@ -85,3 +85,18 @@ ssh problems:
 to enable password ssh login:
 amending the /etc/ssh/sshd_config 'PasswordAuthentication yes' then re-started the service 'sudo systemctl restart sshd'
 
+************************
+
+to create a .box from an existing vagrant vm
+
+1) vagrant halt
+2) vagrant package  # creates package.box
+3) make a new directory for the copy
+4) in that directory do a vagrant init, or copy the Vagrantfile
+5) fix the Vagrantfile
+	- new name (config.vm.box = "newname")
+	- config.vm.box.url = "file:///path/to/package.box"
+	- fix network address (config.vm.network :private, ip:"192.168.188.xx")
+6) vagrant up
+7) ssh vagrant@192.168.188.xx or vagrant ssh
+
