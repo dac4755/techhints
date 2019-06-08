@@ -5,6 +5,14 @@ catch syscall 1  # breaks on a syscall, 1 is write in x64 linux
 set $rax=0xfff   # sets register to a value
 set $rip=0x400834  # sets instruction pointer 
 
+# check to see if hardware support for memory watching:
+show can-use-hw-watchpoints
+
+rwatch 0xfeeffeef   # break on read of addr
+watch 0xfeeffeef   # break on write to addr
+awatch 0xfeeffeef   # break on read or write
+
+info all-registers   #shows all of the registers
 
 gef:
 search-pattern "string"  # returns all the places it finds the pattern

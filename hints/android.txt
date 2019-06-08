@@ -66,3 +66,10 @@ adb push a.out /data/local/tmp/
 ***************************************
 
 
+apktool b -o u1-0.apk ubuild/
+adb install u1-0.apk
+keytool -genkey -v -keystore ~/.android/debug.newkeystore -alias signkey -keyalg RSA -keysize 2048 -validity 20000
+jarsigner -verbose -keystore ~/.android/debug.newkeystore u1-0.apk signkey
+adb install u1-0.apk 
+adb uninstall sg.vantagepoint.uncrackable1
+adb install u1-0.apk 
