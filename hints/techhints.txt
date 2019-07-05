@@ -1,4 +1,19 @@
 ******************
+stego
+
+$ stegoveritas
+usage: stegoveritas [-h] [-out dir] [-debug] [-meta] [-imageTransform]
+                    [-bruteLSB] [-colorMap [N [N ...]]]
+                    [-colorMapRange Start End] [-extractLSB]
+                    [-red index [index ...]] [-green index [index ...]]
+                    [-blue index [index ...]] [-alpha index [index ...]]
+                    [-extract_frames] [-trailing] [-exif] [-xmp] [-carve]
+                    file
+via pip3 install
+#ftw
+
+
+******************
 how to change MAC address:
 
 ifconfig interface down
