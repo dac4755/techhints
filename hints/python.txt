@@ -1,0 +1,10 @@
+# pyton virtual environment
+
+# create a virtual python environment in directory called "name"
+virtualenv [name]
+
+# activate the environment
+source [name]/bin/activate
+
+# deactivate 
+deactivate
