@@ -95,7 +95,7 @@ to create a .box from an existing vagrant vm
 4) in that directory do a vagrant init, or copy the Vagrantfile
 5) fix the Vagrantfile
 	- new name (config.vm.box = "newname")
-	- config.vm.box.url = "file:///path/to/package.box"
+	- config.vm.box_url = "file:///path/to/package.box"
 	- fix network address (config.vm.network :private, ip:"192.168.188.xx")
 6) vagrant up
 7) ssh vagrant@192.168.188.xx or vagrant ssh

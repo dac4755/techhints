@@ -43,3 +43,9 @@ You need to kill off all currently running instances of bluetooth. Then start th
 hciconfig hci0 up
 hciconfig hci0 leadv
 
+************************
+
+scan for dns queries and print the query
+
+tshark -ni wlp1s0 -Y "udp.dstport == 53" -T fields -e dns.qry.name
+

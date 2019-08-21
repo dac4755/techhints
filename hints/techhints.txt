@@ -1,4 +1,29 @@
 ******************
+stego
+
+$ stegoveritas
+usage: stegoveritas [-h] [-out dir] [-debug] [-meta] [-imageTransform]
+                    [-bruteLSB] [-colorMap [N [N ...]]]
+                    [-colorMapRange Start End] [-extractLSB]
+                    [-red index [index ...]] [-green index [index ...]]
+                    [-blue index [index ...]] [-alpha index [index ...]]
+                    [-extract_frames] [-trailing] [-exif] [-xmp] [-carve]
+                    file
+via pip3 install
+#ftw
+
+
+******************
+how to change MAC address:
+
+ifconfig interface down
+ifconfig interface hw ether 01:02:03:04:05:06
+ifconfig interface up
+
+seems to work even with NetworkManager on, but that might be 
+a problem. see wireless hints for dealing with that.
+
+******************
 find out what package provided a file
 
 rpm -q --whatprovides /usr/share/selinux/devel/Makefile 
