@@ -19,6 +19,20 @@ $ cat .vimrc
 
 ** split screen commands
 
-????
+:vsp     # vertical split
+:sp [filename]   # hor split optional filename
+:set mouse=a      # enable mouse
+
+:res +5   # resize hor
+:vertical resize +5
+
+^w arrow   # focus
+
+^w =    # make em equal size
+^w < or >   # single column resize
+^w n+ or n-   # row resize by n 
+
+^w _    # max height
+^w |     # max width
 
 
