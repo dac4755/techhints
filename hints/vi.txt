@@ -2,7 +2,7 @@
 
 use vim, vi should get alternatives linked to vim
 
-to get a new syntax coloring set, but the files in ~/.vim
+to get a new syntax coloring set, put the files in ~/.vim
 
 $ d
 total 28
@@ -26,7 +26,7 @@ $ cat .vimrc
 :res +5   # resize hor
 :vertical resize +5
 
-^w arrow   # focus
+^w arrow   # focus on window
 
 ^w =    # make em equal size
 ^w < or >   # single column resize
