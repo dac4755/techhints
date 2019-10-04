@@ -1,3 +1,15 @@
+# from https://superuser.com/questions/39751/add-directory-to-path-if-its-not-already-there/39995#39995
+# for bashrc
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        export PATH="${PATH:+"$PATH:"}$1"
+	echo "### $PATH"
+    fi
+}
+pathadd ~/bin
+pathadd ~/Library/Android/sdk/platform-tools/
+
+
 *****************************
 # from twitter @JaneScott_ ask first cmds to run
 # given a low priv shell on linux, responses
