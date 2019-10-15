@@ -1,4 +1,21 @@
 ******************
+decrypt tcp traffic
+
+export SSLKEYLOGFILE=/home/foo/keylogs.txt
+
+- recognized by mitmproxy, firefox, chrome, wireshark
+
+mitmproxy sets up proxy at ip.addr.host.lan:8080
+
+to force an android phone through the proxy:
+$ settings put global http_proxy ip.addr.host.lan:8080
+note that the phone mustt be ablt to get to the proxy (same LAN 
+is preferable)
+
+mitmproxy does not collect/dump as pcap!! Not yet sure on how
+to deal with dumps. The web interface is helpful (mitmweb)
+
+******************
 stego
 
 $ stegoveritas
