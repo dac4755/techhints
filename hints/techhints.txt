@@ -7,6 +7,10 @@ export SSLKEYLOGFILE=/home/foo/keylogs.txt
 
 mitmproxy sets up proxy at ip.addr.host.lan:8080
 
+# need to add the mitm cert into the phone's trusted list
+$ adb push ~/.mitmproxy/mitmproxy-ca-cert.cer /data/local/tmp/
+# use Install from Storage under security settings somwhere to import it
+
 to force an android phone through the proxy:
 $ settings put global http_proxy ip.addr.host.lan:8080
 note that the phone mustt be ablt to get to the proxy (same LAN 
