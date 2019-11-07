@@ -1,3 +1,12 @@
+
+******************
+vmware 
+
+vmware-tools
+- for linux use open-vm-tools (dnf/yum/apt) not vmware's 
+- if share doesn't mount: /usr/bin/vmhgfs-fuse /mnt/hgfs
+  not sure what to do if there are more than one share
+
 ******************
 decrypt tcp traffic
 

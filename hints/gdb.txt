@@ -1,5 +1,7 @@
 starti  # starts execution and immediately breaks
 
+c N  # continue from this breakpoint and ignore it N times
+
 catch syscall 1  # breaks on a syscall, 1 is write in x64 linux
 
 set $rax=0xfff   # sets register to a value
