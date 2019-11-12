@@ -1,5 +1,29 @@
 
 ******************
+linux capabilities
+
+https://blog.container-solutions.com/linux-capabilities-why-they-exist-and-how-they-work
+
+two part explanation. Also see the utilities: getcap, setcap, capsh
+
+capsh --print
+capsh --decode=hex_string_from_proc
+
+grep Cap /proc/self/status to get hex string
+
+getcap on a file shows the capabilities assigned to the file as well as the e-ffectiveness bit
+[root@localhost ~]# getcap /usr/bin/*
+/usr/bin/arping = cap_net_raw+p
+/usr/bin/clockdiff = cap_net_raw+p
+/usr/bin/gnome-keyring-daemon = cap_ipc_lock+ep
+/usr/bin/gnome-shell = cap_sys_nice+ep
+/usr/bin/newgidmap = cap_setgid+ep
+/usr/bin/newuidmap = cap_setuid+ep
+/usr/bin/ping = cap_net_admin,cap_net_raw+p
+
+
+******************
+
 vmware 
 
 vmware-tools
