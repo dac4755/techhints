@@ -1,3 +1,4 @@
+
 for Pixel, to get to recovery menu:
 1) power off all the way
 2) hold Vol Down
@@ -7,6 +8,20 @@ for Pixel, to get to recovery menu:
 6) boots to "No command"
 7) Hold power
 8) tap Vol Up and release both; Recovery menu should appear instantly (before release)
+
+****************************
+
+extracting kernel and root filesystem from boot partition
+
+use unpackbootimg, https://github.com/osm0sis/mkbootimg
+ 
+one of the files you get is boot.img-ramdisk.gz - this is a cpio file, so
+
+mkdir rootfs
+cd rootfs
+zcat boot.img-ramdisk.gz | cpio -i
+
+extracts all of the files
 
 ****************************
 
