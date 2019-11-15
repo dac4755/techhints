@@ -1,4 +1,23 @@
 
+****************************
+from a C (NDK) program, to send messages to the log:
+
+#include <android/log.h>
+
+#define APPNAME "MyApp"
+
+__android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "My Log");
+
+Also Make sure you also link against the logging library, in your Android.mk file:
+
+LOCAL_LDLIBS := -llog
+
+Depending on the configuration you might need to use something more than "_VERBOSE" like _ERROR
+or it might not make it to the log.
+
+
+****************************
+
 for Pixel, to get to recovery menu:
 1) power off all the way
 2) hold Vol Down
