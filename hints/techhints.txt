@@ -1,5 +1,14 @@
 
 ******************
+to compile a shared library
+vim lib.c
+gcc -c -fPIC lib.c -o lib.o
+gcc -share -fPIC lib.o
+
+from liveoverflow's suidbash google ctf 2019, at 11:00
+
+
+******************
 linux capabilities
 
 https://blog.container-solutions.com/linux-capabilities-why-they-exist-and-how-they-work
