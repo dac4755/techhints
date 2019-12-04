@@ -1,7 +1,11 @@
 # pyton virtual environment
+# https://realpython.com/python-virtual-environments-a-primer/
 
 # create a virtual python environment in directory called "name"
+#python2
 virtualenv [name]
+# python3
+python3 -m venv env
 
 # activate the environment
 source [name]/bin/activate
