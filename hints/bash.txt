@@ -1,4 +1,25 @@
 *****************************
+
+print out hex digits:
+
+echo -n hello | hexdump -v -e '"\\" 1/1 "x%02X" ' 
+\x68\x65\x6C\x6C\x6F
+
+
+*****************************
+
+from @climagic on twitter:
+diff <(grep = config.txt) <(grep = config.new.txt)
+
+or what I would do
+vim -d <(grep = config.txt) <(grep = config.new.txt)
+
+For years I've been doing something like:
+grep = config.txt > 1
+grep = config.new.txt > 11
+diff 1 11
+
+*****************************
 shell script nmap
 
 [[ $# -ne 3 ]] && echo "Usage: $0 target first_port last_port" && exit 1

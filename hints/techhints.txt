@@ -6,7 +6,22 @@ gcc -c -fPIC lib.c -o lib.o
 gcc -share -fPIC lib.o
 
 from liveoverflow's suidbash google ctf 2019, at 11:00
+******************
 
+from liveoverflow to test shell code:
+https://www.youtube.com/watch?v=re4teYmSoXA
+
+int main(int ac, char **av) {
+	int (*func)();
+	func = (int (*)()) av[1];
+	(int)(*func)();
+}
+
+use as argument:
+./test "$(echo -n "\xcc\.....\0x5")"
+
+the \xcc is a break instruction for intel - it acts like you set a breakpoint in gdb
+-not sure what android equivalent is
 
 ******************
 linux capabilities
