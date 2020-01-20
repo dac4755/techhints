@@ -1,5 +1,11 @@
 
 ******************
+eichar test virus (base64 obv)
+
+WDVPIVAlQEFQWzRcUFpYNTQoUF4pN0NDKTd9JEVJQ0FSLVNUQU5EQVJELUFOVElWSVJVUy1URVNU
+LUZJTEUhJEgrSCoK
+
+******************
 to compile a shared library
 vim lib.c
 gcc -c -fPIC lib.c -o lib.o
