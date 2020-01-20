@@ -6,6 +6,8 @@ tmux attach -t session_name
 ^b %   # split vertical
 
 ^b : resize-pane u/d/l/r number   # resize 
+^b M-1    # resize equal vert
+^b M-2    # resize equal horizontal
 
 # for mac pane mouse resize
 ^b : set-option -g mouse on
