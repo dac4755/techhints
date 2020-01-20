@@ -1,3 +1,29 @@
+****************************
+to build binary policy from a device android 8 or later:
+
+# from  Android-src/system/core/init/selinux.cpp
+secilc /system/etc/selinux/plat_sepolicy.cil -m -M true -G -N -c $policyvers [[list of files below]]  -o policy.30 -f /sys/fs/selinux/null
+  
+constexpr const char plat_policy_cil_file[] = "/system/etc/selinux/plat_sepolicy.cil";
+
+    if (!ReadFirstLine("/vendor/etc/selinux/plat_sepolicy_vers.txt", plat_vers)) {
+
+bool LoadSplitPolicy() {
+
+
+policyvers=`cat /sys/fs/selinux/policyvers`
+vver=`head /vendor/etc/selinux/plat_sepolicy_vers.txt`
+
+if [ -f /system/etc/selinux/mapping/${vver}.cil ]; then echo "/system/etc/selinux/mapping/${vver}.cil "; fi 
+if [ -f /system/etc/selinux/mapping/${vver}.compat.cil ]; then echo "/system/etc/selinux/mapping/${vver}.compat.cil " ; fi 
+if [ -f /system_ext/etc/selinux/system_ext_sepolicy.cil ]; then echo "/system_ext/etc/selinux/system_ext_sepolicy.cil " ; fi 
+if [ -f /system_ext/etc/selinux/mapping/${vver}.cil ]; then echo "/system_ext/etc/selinux/mapping/${vver}.cil " ; fi 
+if [ -f /product/etc/selinux/product_sepolicy.cil ]; then echo "/product/etc/selinux/product_sepolicy.cil " ; fi 
+if [ -f /product/etc/selinux/mapping/${vver}.cil ]; then echo "/product/etc/selinux/mapping/${vver}.cil " ; fi 
+if [ -f /vendor/etc/selinux/plat_pub_versioned.cil ]; then echo "/vendor/etc/selinux/plat_pub_versioned.cil " ; fi 
+if [ -f /vendor/etc/selinux/vendor_sepolicy.cil ]; then echo "/vendor/etc/selinux/vendor_sepolicy.cil " ; fi 
+if [ -f /vendor/etc/selinux/nonplat_sepolicy.cil ]; then echo "/vendor/etc/selinux/nonplat_sepolicy.cil " ; fi 
+if [ -f /odm/etc/selinux/odm_sepolicy.cil ]; then echo "/odm/etc/selinux/odm_sepolicy.cil " ; fi 
 
 ****************************
 from a C (NDK) program, to send messages to the log:
