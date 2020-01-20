@@ -1,0 +1,16 @@
+tmux new -s session_name
+
+tmux attach -t session_name
+
+^b "   # split horizontal
+^b %   # split vertical
+
+^b : resize-pane u/d/l/r number   # resize 
+
+# for mac pane mouse resize
+^b : set-option -g mouse on
+
+^b c    # new window
+^b p or n   # previous or next window
+
+
