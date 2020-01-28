@@ -322,6 +322,25 @@ Extraction
 Extract length characters from variable starting at position	${variable:position:length}
 String length of variable	${#variable}
 
+# just return the  extension:
+$ echo ${filename%.*}
+# just return the filename without the extension:
+$ echo ${file%.*}
+# get rid of the path and only leave the filename:
+file=$(basename -- "$fullpathfilename")
+# get just directory:
+echo $(dirname -- "$fullpathname")
+
+also see: https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+
+${variable%pattern}
+  Trim the shortest match from the end
+${variable##pattern}
+  Trim the longest match from the beginning
+${variable%%pattern}
+  Trim the longest match from the end
+${variable#pattern}
+  Trim the shortest match from the beginning
 
 ******************
 
