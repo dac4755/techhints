@@ -1,3 +1,10 @@
+******************
+convert ebook formats
+
+yum install calibre
+
+ebook-convert foo.epub foo.mobi
+ebook-convert foo.pdf foo.mobi
 
 ******************
 eichar test virus (base64 obv)
