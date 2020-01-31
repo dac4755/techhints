@@ -1,4 +1,16 @@
 ****************************
+to build an individual program in AOSP
+
+from top of AOSP
+source build/envsetup.sh
+lunch aosp_eng or no arg to get list
+mmma external...../dir_of_program
+
+on mac you might need to 
+ulimit -n 4096   # to allow more than 256 open files as aosp is file hungry
+
+
+****************************
 to build binary policy from a device android 8 or later:
 
 # from  Android-src/system/core/init/selinux.cpp
