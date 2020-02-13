@@ -1,4 +1,11 @@
 ******************
+
+turn on sshd permanently (definitely on fedora)
+
+systemctl start sshd.service
+systemctl enable sshd.service
+
+******************
 convert ebook formats
 
 yum install calibre
