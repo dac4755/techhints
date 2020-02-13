@@ -1,9 +1,12 @@
 
 ##############################
 
-containers
+# containers
+#
+# lxd is the LXD container manager daemon
+# lxc is used to interact with the daemon
 
-lxc init  # run the first time as regular user to set up stuff; not sure where it all goes
+lxd init  # run the first time as regular user to set up stuff; not sure where it all goes
 
 default (and non) settings I chose:
 
