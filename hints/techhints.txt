@@ -4,6 +4,15 @@ turn on sshd permanently (definitely on fedora)
 
 systemctl start sshd.service
 systemctl enable sshd.service
+ 
+# restart networking
+systemctl restart NetworkManager
+
+# turn services off permanently - specify as many services as you want
+systemctl disable name1.service name2.service ...
+
+# list all of the  services with their status
+systemctl list-unit-files
 
 ******************
 convert ebook formats
