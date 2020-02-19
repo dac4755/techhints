@@ -1,4 +1,10 @@
 ******************
+find rop gadgets
+
+ropper
+rp++ or xrop
+
+******************
 
 turn on sshd permanently (definitely on fedora)
 
