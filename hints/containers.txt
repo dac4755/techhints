@@ -1,5 +1,6 @@
 
-##############################
+#############################
+
 
 # containers
 #
@@ -85,4 +86,33 @@ podman info
 - if it complains about no /etc/containers/registries.conf then...
 echo -e "[registries.search]\nregistries = ['docker.io', 'registry.fedoraproject.org', 'quay.io', 'registry.centos.org']" > /etc/containers/registries.conf
 
+*************** and docker commands
+
+** IMPORTANT ****
+a docker creation can fail silently on a part of its creation. Usually can happen
+if using a (corporate) web proxy causing certificate problems - even if you've imported
+the cert into your store. The docker image may come up but not run correctly.
+
+# list images
+docker images
+
+# remove image
+docker rmi docker-image-id
+
+# save a docker image for moving - using repo:tag instead of container id retains the repo and tag
+docker save -o foo.tar repo:tag
+docker load -i foo.tar     # load image onto new system
+
+# save a docker container for moving
+docker container stop containerid  # stop it first
+docker export container-id > name.tar
+
+# look at logs
+docker container inspect container-id  # look at info
+docker container logs container-id    # logs
+
+# to move all docker images from one to another (will overwrite any already on destination)
+tar -cvf docker-images.tar /var/lib/docker/aufs /var/lib/docker/image
+tar -xvf docker-images.tar -C /var/lib/docker/.
+service docker restart
 
