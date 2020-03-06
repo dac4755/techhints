@@ -1,5 +1,11 @@
 *****************************
 
+#don't paginate if less than a page
+
+alias less="less -F -X "
+
+*****************************
+
 print out hex digits:
 
 echo -n hello | hexdump -v -e '"\\" 1/1 "x%02X" ' 
