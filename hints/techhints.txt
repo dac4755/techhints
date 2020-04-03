@@ -1,4 +1,19 @@
 ******************
+
+# start firefox only in an X server :5 with white background
+/bin/xinit /usr/bin/firefox -width 1660 -height 900 -- :5 -wb
+
+# selinux only??? with xguest???
+edit /etc/security/sepermit.conf to either force user/group/selinux users to 
+login with or without entering a password
+
+semanage login -S xguest_u joe
+
+if using xinit line as a login shell then there might be permission/selinux 
+issues with /var/log, specifically with the Xlog files
+
+
+******************
 find rop gadgets
 
 ropper
