@@ -1,4 +1,15 @@
 ****************************
+to get data from backup:
+
+# create backup file on laptop:
+adb backup -noapk -all
+
+# skip header to get to compressed tar file:
+dd if=backup.ab of=backup.zlib bs=24 skip=1
+openssl zlib -d -in backup.zlib -out backup.tar
+tar xf backup.tar
+
+****************************
 to build an individual program in AOSP
 
 from top of AOSP
