@@ -12,6 +12,38 @@ semanage login -S xguest_u joe
 if using xinit line as a login shell then there might be permission/selinux 
 issues with /var/log, specifically with the Xlog files
 
+=======
+send text sms over email
+
+att: 4105551212@txt.att.net
+     4105551212@mms.att.net
+
+tmobile: @tmomail.net
+	     @tmomail.net
+
+verizon: @vtext.com
+	     @vzwpix.com
+
+metro pcs: @metropcs.sms.us
+
+boost mobile: @sms.myboostmobile.com
+			  @myboostmobile.com
+
+nextel: @messaging.nextel.com
+
+sprint: @messaging.sprintpcs.com
+		@pmsprint.com
+
+us cellular: @email.uscc.net
+			 @mms.uscc.net
+
+virgin mobile: @vtext.com
+			   @vmpix.com
+
+alltel: @text.wireless.alltel.com
+        @mms.alltelwireless.com
+
+lots of "other" carriers: https://www.email-unlimited.com/stuff/send-email-to-phone.htm
 
 ******************
 find rop gadgets
