@@ -1,5 +1,25 @@
 ******************
 
+#patch ef files in various ways, like libraries
+
+patchelf
+
+# show linked dynamic libraries
+ldd a.out
+
+# show symbols
+nm -D a.out
+
+# show lots of info on elf file
+readelf -a
+
+# find all executables in path with string in name
+locate -b elf | while IFS= read -r file; do [[ ! -h "$file" &&  -f "$file" && -x "$file" ]] && echo $file ; done
+# or
+locate -b elf | xargs -ri find {} -prune -type f -executable
+
+******************
+
 # start firefox only in an X server :5 with white background
 /bin/xinit /usr/bin/firefox -width 1660 -height 900 -- :5 -wb
 
