@@ -17,6 +17,9 @@ readelf -a
 locate -b elf | while IFS= read -r file; do [[ ! -h "$file" &&  -f "$file" && -x "$file" ]] && echo $file ; done
 # or
 locate -b elf | xargs -ri find {} -prune -type f -executable
+# or to find including links (like gcc)
+locate -b elf | xargs -ri find -L {} -prune -type f -executable
+
 
 ******************
 
