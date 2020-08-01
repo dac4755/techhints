@@ -1,4 +1,40 @@
 ***********************
+ 
+# show all extended attributes; normally selinux will not show up:
+
+getfattr -m . filename
+
+***********************
+
+# use secilc to build policy from cil files. On Android:
+
+secilc /system/etc/selinux/plat_sepolicy.cil -m -M true -G \
+        -N -c $policyvers $vendor_files_list -o \
+        /data/local/tmp/policy.\$policyvers -f /sys/fs/selinux/null
+
+# on android the cil files come from:
+platform policy)
+/system/etc/selinux/plat_sepolicy.cil
+(vendor policies)
+/system/etc/selinux/mapping/\${vver}.cil
+/system/etc/selinux/mapping/\${vver}.compat.cil
+/system_ext/etc/selinux/system_ext_sepolicy.cil
+/system_ext/etc/selinux/mapping/\${vver}.cil
+/product/etc/selinux/product_sepolicy.cil
+/product/etc/selinux/mapping/\${vver}.cil
+either
+        /vendor/etc/selinux/plat_pub_versioned.cil
+   /vendor/etc/selinux/vendor_sepolicy.cil
+or (if /vendor/etc/selinux/vendor_sepolicy.cil does not exist)
+        /vendor/etc/selinux/nonplat_sepolicy.cil
+/odm/etc/selinux/odm_sepolicy.cil
+
+# to build secilc (or any AOSP utility):
+source build/envsetup.sh
+lunch aosp_arm-eng
+mmma external/selinux/secilc
+
+**********************
 
 dynmaically toggle a domain to permissive and then restore:
 
