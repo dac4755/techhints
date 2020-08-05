@@ -1,4 +1,12 @@
 ******************
+sms:
+https://sms-online.co/receive-free-sms
+
+sms and mail:
+
+mailinator.com
+
+******************
 
 #patch ef files in various ways, like libraries
 
