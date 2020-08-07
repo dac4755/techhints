@@ -1,4 +1,9 @@
 ******************
+
+to compile c code into straight binary use gcc -c
+(no linking, reloc, etc.)
+
+******************
 sms:
 https://sms-online.co/receive-free-sms
 
