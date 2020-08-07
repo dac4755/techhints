@@ -1,0 +1,33 @@
+**********************
+for binary chunk that probably is code but unknown chip, see if
+there is a commonly used instruction whose opcode is ascii. For example,
+for ARM/thumb, BX LR is 0x70 0x47 or "pG". Run strings on the binary and
+look for many occurences of that small string and you can likely identify 
+the chip/instruction set.
+(Defcon Safemode talk, Beyond Root, Christopher Wade)
+
+**********************
+
+To identify RSA public key in memory dump: 0x80 high entropy bytes followed 
+by "00 01 00 01" (hex) which is 65537, the recommended exponent for RSA
+
+(Defcon Safemode talk, Beyond Root, Christopher Wade)
+
+**********************
+
+use unicorn to emulate and run firmware. Start address is the reset pointer. Usually ???
+the first bytes of firmware image are the start address followed by the address of the
+reset vector. There will likely be a chunk of code that initializes the hardware and needs
+to be bypassed.
+(Defcon Safemode talk, Beyond Root, Christopher Wade)
+
+**********************
+
+hashing functions (sha, sha256, etc) use fixed number of bytes for input. if you know how many 
+bytes are sent to the hash function you can guess which one.
+
+(Defcon Safemode talk, Beyond Root, Christopher Wade)
+
+**********************
+
+
