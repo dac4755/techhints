@@ -1,4 +1,13 @@
 **********************
+
+for x86 and x86-64, you can switch between them with the retf
+assembly opcode. This was a hint for a google ctf where syscall 0
+(read,in 64 bit mode) was blocked by seccomp but syscall3 (close)
+was allowed. In 32-bit syscall 3 is read so you can use it by 
+switching with retf.
+
+
+**********************
 for binary chunk that probably is code but unknown chip, see if
 there is a commonly used instruction whose opcode is ascii. For example,
 for ARM/thumb, BX LR is 0x70 0x47 or "pG". Run strings on the binary and
