@@ -15,3 +15,20 @@ For example:
 Works in Chrome
 
 #XSS #javascript
+
+##############################
+
+Julia Evans, @b0rk tweeted a default stylesheet zine,
+
+https://wizardzines.com/comics/default-stylesheets/
+
+another link said you can see firefox's via
+resource://gre-resources/html.css
+
+I found, through grep and strings, that the file is in
+/usr/lib64/firefox/omni.ja
+unzip to find:
+./chrome/toolkit/res/html.css
+
+##############################
+
