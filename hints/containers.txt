@@ -116,3 +116,9 @@ tar -cvf docker-images.tar /var/lib/docker/aufs /var/lib/docker/image
 tar -xvf docker-images.tar -C /var/lib/docker/.
 service docker restart
 
+# find running docker instances
+docker ps
+
+# create an interactive shell with a running docker
+docker exec -it [container id or name] /bin/bash
+
