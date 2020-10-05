@@ -57,7 +57,10 @@ pathadd ~/Library/Android/sdk/platform-tools/
 
 ls -l | sed 's/[[:space:]]\{1,\}/ /g' | cut -d' ' -f1-5,9-
 
+*******************************
 
+# infinite while loop
+while : ; do ls -l foo ; sleep 10 ; done
 
 *****************************
 # from twitter @JaneScott_ ask first cmds to run
