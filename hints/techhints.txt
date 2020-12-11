@@ -174,6 +174,9 @@ vmware-tools
   not sure what to do if there are more than one share
 /usr/bin/vmhgfs-fuse -o rw,uid=1000,gid=1000,allow_root /mnt/hgfs
 umount /mnt/hgfs 
+# macos is picky. you might need this additional argument:
+/usr/bin/vmhgfs-fuse -o rw,uid=1000,gid=1000,max_write=61440,allow_root /mnt/hgfs
+
 
 ******************
 decrypt tcp traffic
