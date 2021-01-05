@@ -179,3 +179,13 @@ jarsigner -verbose -keystore ~/.android/debug.newkeystore u1-0.apk signkey
 adb install u1-0.apk 
 adb uninstall sg.vantagepoint.uncrackable1
 adb install u1-0.apk 
+
+***************************************
+ frida gadget
+
+pull apk with adb
+unpack apk with apktool
+install frida gadget library into app's lib directory
+patch smali to load frida library on start
+  - need to know app's main routine:
+    look for android.intent.action.MAIN in manifest, the <activity> android:name= should be the onCreate() method
