@@ -1,0 +1,8 @@
+##########################
+# treat json like a database
+# (see python for quick conversion of xml to json)
+# for example, on mac, what kegs are installed:
+
+brew info --json=v1 --installed | jq ‘.[] | select(.keg_only == true) | .name'
+
+
