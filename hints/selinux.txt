@@ -1,4 +1,12 @@
 ***********************
+# not for android
+cat /sys/kernel/security/lsm
+
+lockdown,capability,yama,selinux     # fedora 32 5.8.16
+capability,yama,apparmor			# ubuntu 18.04.5   4.15.0
+
+
+***********************
  
 # show all extended attributes; normally selinux will not show up:
 
