@@ -1,4 +1,7 @@
 ******************
+https://devhints.io/
+
+******************
 
 to compile c code into straight binary use gcc -c
 (no linking, reloc, etc.)
