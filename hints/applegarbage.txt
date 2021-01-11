@@ -1,0 +1,49 @@
+###################
+this file contains hints for the massively unintuitive PoS
+associated with MacOS and maybe IOS. 
+###################
+
+the *default* setting for the Mac's filesystem is case insensitive.
+This is bizarre and horrible. It can have terrible consequences for 
+build systems and "duplicate" file names (though people who use capital 
+letters in file names are for the most part philistines as well)
+
+If you didn't know this and have already used your system, it is possible 
+to stake a claim to part of the unused storage space and reformat and redefine
+it to be case sensitive.
+
+to do this:
+
+- add an APFS volume
+- Disk Utility app, select an existing APFS volume and click Add Volume
+- the options are variation on plain, encrypted, case sensitive
+- choose wisely and set the other options like mount point
+
+###################
+
+To protect the snowflake users of Macs from potentially dangerous files on 
+their systems, the default security settings for some applications prevents
+access to those files. For example, the terminal application does not initially 
+get access to some ~/Library files. To fix this:
+ 
+- pull down System Preferences from the Apple icon (top left on most screens)
+- choose Security & Privacy
+- select Privacy tab
+- click on the Full Disk Access icon
+- find the terminal (or other app) and check the box; this may require 
+  clicking the lock (lower left) to unlock the applications
+
+###################
+
+another annoying default setting is the number of file descriptors, which is set to 256
+this causes mayhem when trying to build applications under AOSP (*not* the whole thing, just 
+a single application like strace)
+ulimit -a  # shows all defaults
+ulimit -n  # shows open file limit
+ulimit -n 4096  # works; linux seems to use 1024 so that may be good enough
+
+# note this is per shell, not global
+
+###################
+
+
