@@ -2,6 +2,11 @@
 https://devhints.io/
 
 ******************
+# from @climagic
+
+ssh-copy-id 'user@remotehost' # Automatically installs your SSH public key to the remote host (this is included in the openssh package). Need an alternate SSH port, just use '-p PORTNUM user@remotehost'
+
+******************
 
 to compile c code into straight binary use gcc -c
 (no linking, reloc, etc.)
