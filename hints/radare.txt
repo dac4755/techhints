@@ -1,4 +1,12 @@
 ******************
+# as of r2 5.1.0
+$ rax2 -I 192.168.1.32
+0x2001a8c0
+$ rax2 -I 0x2001a8c0
+192.168.1.32
+
+
+******************
 radare r2
 
 # this is @trufae (pancake) saying to use "custom" analysis. the aab does not work in my
