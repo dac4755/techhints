@@ -1,4 +1,24 @@
 ****************************
+# create and run a java app on android via adb shell
+# from https://blog.rom1v.com/2018/03/introducing-scrcpy/
+
+public class HelloWorld {
+    public static void main(String... args) {
+        System.out.println("Hello, world!");
+    }
+}
+javac -source 1.7 -target 1.7 HelloWorld.java 
+dx --dex --output classes.dex HelloWorld.class
+adb  push classes.dex /data/local/tmp
+adb shell CLASSPATH=/data/local/tmp/classes.dex app_process / HelloWorld
+
+
+****************************
+
+# scrcpy https://github.com/Genymobile/scrcpy mirrors display over adb
+# sndcpy can forward audio, https://github.com/rom1v/sndcpy
+
+****************************
 to get data from backup:
 
 # create backup file on laptop:
