@@ -1,4 +1,9 @@
 ***********************
+# create two pdfs from 2 jpgs with same sha1sum
+
+https://github.com/rom1v/shadow
+
+***********************
 
 # convert to a pem format
 openssl pkcs7 -inform DER -print_certs -out cert.pem -in CERT.RSA
