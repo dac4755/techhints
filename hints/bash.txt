@@ -1,4 +1,16 @@
 *****************************
+# read execute loop
+# this works with android shell
+# eval allows execution with variables, like
+# eval "echo $PATH"
+
+while read cmd; do
+    echo "############ running $cmd"
+    eval "$cmd"
+    echo "############ done running $cmd"
+done
+
+*****************************
 
 #don't paginate if less than a page
 
