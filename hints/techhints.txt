@@ -2,6 +2,14 @@
 https://devhints.io/
 
 ******************
+# command line search
+^R reverse history search
+^S forward history search
+
+stty -ixon   # to turn off control flow (i.e., ^S stop flow)
+
+******************
+
 # from @climagic
 
 ssh-copy-id 'user@remotehost' # Automatically installs your SSH public key to the remote host (this is included in the openssh package). Need an alternate SSH port, just use '-p PORTNUM user@remotehost'
