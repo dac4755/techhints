@@ -1,4 +1,25 @@
 ****************************
+# adb over wifi
+
+# not rooted
+adb tcpip 8887
+adb connect 10.11.12.13:8887
+
+adb disconnect 10.11.12.13:8887
+
+# show addresses
+adb shell ip -f inet addr
+adb shell ip -f inet addr show wlan0
+
+# revert back to usb
+adb usb
+
+# check if adb port is set
+getprop service.adb.tcp.port
+# expect [0] or [8887] (example)
+
+
+****************************
 # create and run a java app on android via adb shell
 # from https://blog.rom1v.com/2018/03/introducing-scrcpy/
 
