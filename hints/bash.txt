@@ -11,6 +11,37 @@ while read cmd; do
 done
 
 *****************************
+# find all commands in path
+# from https://stackoverflow.com/questions/948008/linux-command-to-list-all-available-commands-and-aliases
+
+You can use the bash(1) built-in compgen
+
+compgen -c will list all the commands you could run.
+compgen -a will list all the aliases you could run.
+compgen -b will list all the built-ins you could run.
+compgen -k will list all the keywords you could run.
+compgen -A function will list all the functions you could run.
+compgen -A function -abck will list all the above in one go.
+
+
+function ListAllCommands
+{
+    echo -n $PATH | xargs -d : -I {} find {} -maxdepth 1 \
+        -executable -type f -printf '%P\n' | sort -u
+}
+If you also want aliases, then:
+
+function ListAllCommands
+{
+    COMMANDS=`echo -n $PATH | xargs -d : -I {} find {} -maxdepth 1 \
+        -executable -type f -printf '%P\n'`
+    ALIASES=`alias | cut -d '=' -f 1`
+    echo "$COMMANDS"$'\n'"$ALIASES" | sort -u
+}
+
+Might want to redirect STDERR to /dev/null to suppress nonexistent directory warnings. echo -n $PATH | xargs -d : -I {} find {} -maxdepth 1 -executable -type f -printf '%P\n' 2> /dev/null | sort -u (+1 for zsh compatibility) – TheLonelyGhost May 19 '15 at 14:07
+
+*****************************
 
 #don't paginate if less than a page
 
