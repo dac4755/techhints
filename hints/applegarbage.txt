@@ -2,6 +2,14 @@
 this file contains hints for the massively unintuitive PoS
 associated with MacOS and maybe IOS. 
 ###################
+# terminal split screen
+cmd-d  splits
+shift-cmd-d unsplits
+
+this is only for viewing in the splits - the bottom remains the only "active"
+terminal. The others are just for maintaining a view of whatever
+
+###################
 
 the *default* setting for the Mac's filesystem is case insensitive.
 This is bizarre and horrible. It can have terrible consequences for 
