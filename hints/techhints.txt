@@ -2,6 +2,25 @@
 https://devhints.io/
 
 ******************
+# in linux to crete more swap space
+fallocate -l 100G /swapfile
+chmod 600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+swapon --show
+free -h
+
+edit /etc/fstab:
+/swapfile none swap sw 0 0 
+
+#server suggestions
+sysctl vm.swappiness=10
+sysctl vm.vfs_cache_pressure=50
+# to make permanent add to bottom of /etc/sysctl.conf
+vm.swappiness=10
+vm.vfs_cache_pressure=50
+
+******************
 # command line search
 ^R reverse history search
 ^S forward history search
