@@ -1,4 +1,14 @@
 ******************
+# build and run a rust program
+
+# if the repo has the cargo.lock and maybe cargo.toml dependencies:
+
+cargo build
+cargo run
+
+# that's it; that's the list
+
+******************
 https://devhints.io/
 
 ******************
