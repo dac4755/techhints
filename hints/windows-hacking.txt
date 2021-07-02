@@ -36,4 +36,10 @@ https://www.dsinternals.com/en/
 get user info
 c:\ net user [username] /domain
 
+*************************
+
+To list macro keybindings in word (on a mac)
+Tools->Customize Keyboard  ; "Categories:" Macros, and choose the Command
+
+*************************
 
