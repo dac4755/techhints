@@ -1,4 +1,18 @@
 ****************************
+to unmask kernel symbol addresses:
+(as root)
+echo 1 > /proc/sys/kernel/kptr_restrict
+cat /proc/kallsyms
+
+
+****************************
+
+In newer android (maybe 10+???) to remove 
+namespace bs, if you have root,
+su -M (maybe su -m on some systems)
+
+
+****************************
 # adb over wifi
 
 # not rooted
