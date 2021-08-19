@@ -1,4 +1,29 @@
 ***********
+#generate
+ssh-keygen -t ed25519 -C "email.foo.com"
+
+# add key to agent
+(if needed start agent: eval "$(ssh-agent -s)"
+
+# create or mod ssh_config
+Host github.com
+   AddKeysToAgent yes
+   UseKeychain yes
+   IdentityFile ~/.ssh/id_xxxxx
+# don't need UseKeychain if no passphrase on key, may just need:
+Host github.com
+   Hostname github.com
+   IdentityFile /home/foo/.ssh/id_xxxx
+
+chmod 400 ~/.ssh/id*  
+
+# in repo???
+git remote set-url origin git@github.com:dac4755/techhints.git
+
+# add public key to github account via https://github.com/ login
+
+
+***********
 
 (Melanie Patrick)
 https://speakerdeck.com/mgapatrick/git-how-to-unfuck
