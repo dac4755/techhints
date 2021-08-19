@@ -1,4 +1,5 @@
 ###################
+
 this file contains hints for the massively unintuitive PoS
 associated with MacOS and maybe IOS. 
 ###################
