@@ -5,6 +5,7 @@ apt install software-properties-common
 add-apt-repository ppa:deadsnakes/ppa
 apt update
 apt install python3.7
+apt install python3.7-dev python3.7-venv
 
 ##########################
  # quick conversion xml to json
