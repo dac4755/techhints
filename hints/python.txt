@@ -1,4 +1,12 @@
 ##########################
+# get install for ubuntu when stuck on 3.5
+apt update
+apt install software-properties-common
+add-apt-repository ppa:deadsnakes/ppa
+apt update
+apt install python3.7
+
+##########################
  # quick conversion xml to json
 # for example, nmap does not output to json
 # this is useful because of jq command (see db.txt)
