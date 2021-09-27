@@ -1,3 +1,11 @@
+
+
+******************
+# set linux screen resolution on cmd line
+# xrandr with no args should show defined resolutions
+xrandr --size 1920x1200
+
+
 ******************
 # build and run a rust program
 
