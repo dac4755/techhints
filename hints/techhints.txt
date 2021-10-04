@@ -1,4 +1,9 @@
 
+******************
+
+# protect pdf file; not sure how good this is
+qpdf --verbose --password="not sure"K --encrypt "user password" "owner pass" 256 --extract=n --print=none --modify=none -- orig.pdf new.pdf
+
 
 ******************
 # set linux screen resolution on cmd line
