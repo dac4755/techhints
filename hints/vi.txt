@@ -1,5 +1,7 @@
 ******************
 
+on macs running linux with no esc key use ^C
+
 use vim, vi should get alternatives linked to vim
 
 to get a new syntax coloring set, put the files in ~/.vim
