@@ -1,5 +1,12 @@
 ###################
 
+if vm won't power on - error on pwer on - try rebooting the machine.
+yes, this is stupid but it seems to work. to me it says there is a 
+file or two somewhere that can just be deleted so when someone figures 
+it out replace this advice.
+
+###################
+
 this file contains hints for the massively unintuitive PoS
 associated with MacOS and maybe IOS. 
 ###################
