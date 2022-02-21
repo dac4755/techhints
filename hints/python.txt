@@ -1,4 +1,15 @@
 ##########################
+# enable tab completion in interpreter
+
+$ vim ~/.pythonrc
+# Add the following lines in that file:
+
+import rlcompleter, readline
+readline.parse_and_bind("tab: complete")
+
+# can enter directly in interpreter if not in .pythonrc
+
+##########################
 # get install for ubuntu when stuck on 3.5
 apt update
 apt install software-properties-common
