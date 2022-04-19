@@ -1,4 +1,12 @@
 *****************************
+
+@climagic
+Ever want to make your shell glob wildcards be case INsensitive?
+Well these settings will do the trick:
+bash: shopt -s nocaseglob
+zsh: unsetopt CASE_GLOB
+
+*****************************
 # read execute loop
 # this works with android shell
 # eval allows execution with variables, like
