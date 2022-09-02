@@ -1,3 +1,23 @@
+******************
+
+Must know free tools for Bug Bounty Hunters:
+
+@Burp_Suite
+ - Interception Proxy
+@zaproxy
+ - Interception Proxy 
+@pdnuclei
+ - Vuln Scanner
+@owaspamass
+ - Asset Discovery
+@spiderfoot
+ - OSINT tool
+@waybackmachine
+ - Urls
+@CVEtrends
+ - Trending CVEs
+@shodanhq
+ - Search Engine
 
 ******************
 

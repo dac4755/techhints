@@ -7,6 +7,12 @@ cat /proc/kallsyms
 
 ****************************
 
+anyone know of a tool that can convert a hex capability flags (e.g. 0000001002203001) into the actual capability names?
+
+whoops, just found it capsh --decode=0xABCDEF
+
+****************************
+
 In newer android (maybe 10+???) to remove 
 namespace bs, if you have root,
 su -M (maybe su -m on some systems)
