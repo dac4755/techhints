@@ -32,6 +32,17 @@ xrandr --size 1920x1200
 
 
 ******************
+
+install
+
+(not sure what the best method is but I had to do this on Mac. Not 
+sure how I initially installed it.)
+
+brew uninstall rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source "$HOME/.cargo/env"
+
+
 # build and run a rust program
 
 # if the repo has the cargo.lock and maybe cargo.toml dependencies:
