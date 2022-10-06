@@ -1,4 +1,18 @@
 ***********
+cloning multiple git repos from an organization:
+
+from https://kevinsimper.medium.com/how-to-clone-all-repositories-in-a-github-organization-8ccc6c4bd9df
+
+# get all the repos (sub for YOURORGANIZATION):
+curl -s https://$GITHUB_AT:@api.github.com/orgs/YOURORGANIZATION/repos?per_page=200
+
+use jq to extract the ssh-url
+use xargs to run clone
+
+# clone them all:
+curl -s https://$GITHUB_AT:@api.github.com/orgs/connectedcars/repos?per_page=200 | jq .[].ssh_url | xargs -n 1 git clone
+
+***********
 new authorization insanity:
 
 macos:
