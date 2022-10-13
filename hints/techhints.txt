@@ -1,5 +1,16 @@
 ******************
 
+# ssh through one machine to another
+
+# from @johnregehr
+# I setup my group's machines so they can be ssh'ed into from exactly one machine -- 
+# one of our shared interactive servers -- and only recently I learned that using 
+# OpenSSH it's easy to jump through the intermediate machine using a single command:
+
+ssh -J machine1 machine2
+
+******************
+
 Must know free tools for Bug Bounty Hunters:
 
 @Burp_Suite
