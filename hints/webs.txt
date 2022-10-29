@@ -1,4 +1,12 @@
 ##############################
+From the Wget man page:
+
+Actually, to download a single page and all its requisites (even if they exist on separate websites), and make sure the lot displays properly locally, this author likes to use a few options in addition to ‘-p’:
+
+wget -E -H -k -K -p http://www.example.com/
+Also in case robots.txt is disallowing you add -e robots=off
+
+##############################
 
 to test for filename upload XSS use this filename:
 "><img src=x onerror=alert()><!--
