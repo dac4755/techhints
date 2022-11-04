@@ -1,4 +1,18 @@
 *****************************
+when output is little endian utf-16 "text" to convert it to readable text:
+
+iconv -f utf-16 -t utf-8 help16.txt > help.txt
+
+for example in the EFI shell in vmware
+? > help16.txt
+
+ file help16.txt
+help.txt: Little-endian UTF-16 Unicode text, with CRLF line terminators
+
+% file /Volumes/NO\ NAME/help.txt
+/Volumes/NO NAME/help.txt: ASCII text, with CRLF line terminators
+
+*****************************
 
 @climagic
 Ever want to make your shell glob wildcards be case INsensitive?

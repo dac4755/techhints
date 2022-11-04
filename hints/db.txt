@@ -20,3 +20,17 @@ brew info --json=v1 --installed | jq ‘.[] | select(.keg_only == true) | .name'
 
 
 #############################
+# check certificates via psql
+# from twitter @jschauma 2022-11-01
+
+psql -t -h crt.sh -p 5432 -U guest certwatch
+
+=> \d certificate_identity
+
+=> SELECT ci.CERTIFICATE_ID, ci.NAME_VALUE FROM certificate_identity ci \
+    WHERE ci.NAME_TYPE = 'dNSName' AND lower(ci.NAME_VALUE) LIKE '%twitter%' LIMIT 10;
+
+=> quit
+
+
+#############################
