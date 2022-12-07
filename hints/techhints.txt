@@ -1,4 +1,16 @@
 ******************
+manage logical disk volumes, lvm 
+
+sudo pvscan                 #Use this to verify your LVM partition(s) is/are detected.
+sudo vgscan --mknodes       #Scans for LVM Volume Group(s)
+sudo vgchange -ay           #Activates LVM Volume Group(s)
+sudo lvscan                 #Scans for available Logical Volumes
+sudo mount /dev/YourVolGroup00/YourLogVol00 /YourMountPoint
+
+the vgchange command above is the one that appears to create the logical device nodes
+lvscan will show if the logical devices are active and can be mounted
+
+******************
 
 # ssh through one machine to another
 
