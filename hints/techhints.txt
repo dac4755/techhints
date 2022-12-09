@@ -10,6 +10,37 @@ sudo mount /dev/YourVolGroup00/YourLogVol00 /YourMountPoint
 the vgchange command above is the one that appears to create the logical device nodes
 lvscan will show if the logical devices are active and can be mounted
 
+for example, let's say we see:
+/dev/mapper/ubuntu--vg-root 101633188 29916956  66720692  31% /   # via df
+
+/dev/mapper/ubuntu--vg-root on / type ext4 (rw,[stuff])     # via mount
+
+# pvscan
+  PV /dev/sda1   VG ubuntu-vg       lvm2 [<80.00 GiB / 0    free]
+  PV /dev/sda2   VG ubuntu-vg       lvm2 [20.00 GiB / 0    free]
+  Total: 2 [<100.00 GiB] / in use: 2 [<100.00 GiB] / in no VG: 0 [0   ]
+
+# lvscan
+  ACTIVE            '/dev/ubuntu-vg/root' [<99.04 GiB] inherit
+  ACTIVE            '/dev/ubuntu-vg/swap_1' [980.00 MiB] inherit
+
+# ls  -l /dev/ubuntu-vg/
+total 0
+lrwxrwxrwx 1 root root 7 Oct 27 09:32 root -> ../dm-0
+lrwxrwxrwx 1 root root 7 Oct 27 09:32 swap_1 -> ../dm-1
+
+# debugfs 
+debugfs 1.44.1 (24-Mar-2018)
+debugfs:  open /dev/sda1
+Checksum errors in superblock!  Retrying...
+/dev/sda1: Bad magic number in super-block while opening filesystem
+/dev/sda1 contains a LVM2_member file system
+debugfs:  open /dev/ubuntu-vg/root 
+debugfs:  cd /etc
+debugfs:  cat shadow
+root:............
+
+
 ******************
 
 # ssh through one machine to another
