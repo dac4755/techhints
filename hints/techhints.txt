@@ -1,4 +1,9 @@
 ******************
+great writeup on ffmpeg
+
+https://img.ly/blog/ultimate-guide-to-ffmpeg/
+
+******************
 manage logical disk volumes, lvm 
 
 sudo pvscan                 #Use this to verify your LVM partition(s) is/are detected.
