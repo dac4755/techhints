@@ -1,3 +1,10 @@
+***************
+# check to see if something wants a reboot:
+
+if [ -f /var/run/reboot-required ]; then echo "rebooting System in 5s!" ; sleep 5s ; reboot; else echo "No reboot needed!";fi
+
+
+***************
 2. Use apt-offline
 You can use apt-offline to prepare a list of packages that need to be installed so that you can install the software you want, then transfer that list to a machine with internet access, download the needed packages, transfer these back to your offline VM, then install them there.
 
