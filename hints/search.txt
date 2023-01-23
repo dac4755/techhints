@@ -1,4 +1,28 @@
 ****************
+
+from @oshint_
+
+#TOR is great for privacy, and finding loads of information on just about anything. Here are some great #onion search engines.
+
+- https://dargle.net/search
+- https://ahmia.fi
+- https://onionlandsearchengine.com
+- https://onion.live
+
+# and other stuff
+
+Essential for the freeflow of information. Whether you are pro or anti-piracy, these libraries are important! Find information on almost any subject.
+
+- https://libgen.rs
+- https://annas-archive.org
+- https://the-eye.eu/public/
+
+# overall osint blog
+
+https://ohshint.gitbook.io/oh-shint-its-a-blog/
+
+
+****************
 hints to help search for stuff
 ***************
 
